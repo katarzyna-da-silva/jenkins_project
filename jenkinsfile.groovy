@@ -29,7 +29,5 @@ pipeline {
                 sh 'echo "Deploy completed successfully" >> deploy_log.txt'    
                 sh "python -m http.server --bind ${HOST} 8000"}
         }
-
-        Finished: SUCCESS
     }
 }
