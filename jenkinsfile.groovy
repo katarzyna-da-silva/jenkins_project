@@ -30,6 +30,6 @@ pipeline {
                 sh "python -m http.server --bind ${HOST} 8000"}
         }
 
-        Finished: SUCCESS!
+        Finished: SUCCESS
     }
 }
