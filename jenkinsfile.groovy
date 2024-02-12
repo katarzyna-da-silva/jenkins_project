@@ -1,7 +1,7 @@
 pipeline {
     agent any                    // connect avec jenkins
     environment {                // variables
-        PYTHON_VERSION = '3.8'  // version python
+        PYTHON_VERSION = '3.13'  // version python
         VENV_NAME = 'katarzyna_venv'      // name env
         HOST = 'localhost'
     }
@@ -9,8 +9,8 @@ pipeline {
     stages {                  // code section
         stage('Build') {               // preparation env.
             steps {          
-                sh "apt-get update && apt-get install -y  python${PYTHON_VERSION} python${PYTHON_VERSION}-dev python3-pip"          //  install python
-                sh "pip3 install virtualenv"                                                                                        // install environment 
+                sh "sudo apt-get update && sudo apt-get install -y  python${PYTHON_VERSION} python${PYTHON_VERSION}-dev python3-pip"          //  install python
+                sh "sudo pip3 install virtualenv"                                                                                        // install environment 
                 sh "virtualenv -p = python${PYTHON_VERSION} python${VENV_NAME}"                                                       // install version & name env
                 sh "source ${VENV_NAME}/bin/activate"                                                                                // active env
                 sh "pip install -r requirements.txt"                                                                                // ajouter le reste des dépendances
