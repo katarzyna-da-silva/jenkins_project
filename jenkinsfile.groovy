@@ -27,10 +27,7 @@ pipeline {
             steps {
                 sh "python hello_devops.py"
                 sh 'echo "Deploy completed successfully" >> deploy_log.txt'    
-            }
-            steps {
-                sh "python -m http.server --bind ${HOST} 8000"
-}
+                sh "python -m http.server --bind ${HOST} 8000"}
         }
 
         Finished: SUCCESS!
