@@ -9,7 +9,7 @@ pipeline {
     stages {                  // code section
         stage('Build') {               // preparation env.
             steps {          
-                sh "sudo apt-get update && sudo apt-get install -y  python${PYTHON_VERSION} python${PYTHON_VERSION}-dev python3-pip"          //  install python
+                sh "apt-get update && apt-get install -y  python${PYTHON_VERSION} python${PYTHON_VERSION}-dev python3-pip"          //  install python
                 sh "pip3 install virtualenv"                                                                                        // install environment 
                 sh "virtualenv -p = python${PYTHON_VERSION} python${VENV_NAME}"                                                       // install version & name env
                 sh "source ${VENV_NAME}/bin/activate"                                                                                // active env
